@@ -9,7 +9,8 @@ namespace ParallelCore
         {
             Console.WriteLine("Hello World!");
             _ = new TParallel();
-            string a = "aa";
+
+            Console.Write("Enter your choice: ");
             var inputFrom = Console.ReadLine();
         }
     }

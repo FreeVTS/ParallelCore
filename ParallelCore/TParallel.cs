@@ -13,7 +13,6 @@ namespace ParallelCore
         private async void Init()
         {
             var result = await CountToOneHundred();
-            string a = "asdf";
         }
 
         private async Task<int> CountToOneHundred()
