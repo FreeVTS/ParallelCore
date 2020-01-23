@@ -8,10 +8,11 @@ namespace ParallelCore
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            _ = new TParallel();
+            var Par = new TParallel();
 
             Console.Write("Enter your choice: ");
             var inputFrom = Console.ReadLine();
+            Console.WriteLine(Par.LastResult);
         }
     }
 }
