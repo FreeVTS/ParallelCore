@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace ParallelCore
 {
@@ -10,9 +9,10 @@ namespace ParallelCore
             Init();
         }
 
-    ///
-    /// Just a comment
-    public int LastResult { get; set; }
+        ///
+        /// Just a comment
+        public int LastResult { get; set; }
+
         private async void Init()
         {
             var result = await CountToOneHundred();
@@ -32,7 +32,8 @@ namespace ParallelCore
                }
                accumulateur = accu;
            });
-           var deux = un.ContinueWith( t =>
+
+            var deux = un.ContinueWith(t =>
            {
                int accu = accumulateur;
                int acculocal = 0;
@@ -42,17 +43,17 @@ namespace ParallelCore
                }
                accumulateur = acculocal;
            });
-           await deux.ContinueWith(t =>
-           {
-               int accu = accumulateur;
-               int acculocal = 0;
-               for (int i = 0; i < 300; i++)
-               {
-                   acculocal = i;
-               }
-               accumulateur = acculocal;
 
-           });
+            await deux.ContinueWith(t =>
+            {
+                int accu = accumulateur;
+                int acculocal = 0;
+                for (int i = 0; i < 300; i++)
+                {
+                    acculocal = i;
+                }
+                accumulateur = acculocal;
+            });
             return accumulateur;
         }
     }
