@@ -10,6 +10,8 @@ namespace ParallelCore
             Init();
         }
 
+    ///
+    /// Just a comment
     public int LastResult { get; set; }
         private async void Init()
         {
