@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,13 +10,30 @@ namespace ParallelCore
         CancellationTokenSource cancellationTokenSource = null;
         public TParallel()
         {
-            Init();
+            tP();
+            //Init();
         }
 
         ///
         /// Just a comment
         public int LastResult { get; set; }
 
+        private void tP()
+        {
+            var l = new List<string> 
+            {
+                "aaa",
+                "bbb"
+            };
+            Parallel.ForEach(l, (s) =>
+            {
+                Console.WriteLine(s);
+                foreach (var st in s)
+                {
+                    Console.WriteLine(st);
+                }
+            });
+        }
         private async void Init()
         {
             cancellationTokenSource = new CancellationTokenSource();
