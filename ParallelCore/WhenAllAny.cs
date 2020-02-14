@@ -29,7 +29,7 @@ namespace ParallelCore
             Console.Write("\n");
             foreach (var number in result)
             {
-                Console.WriteLine("One number collected is {0}", number);
+                Console.WriteLine("Number collected is {0}", number);
             }
         }
 

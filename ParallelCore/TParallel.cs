@@ -11,7 +11,7 @@ namespace ParallelCore
         public TParallel()
         {
             tP();
-            //Init();
+            Init();
         }
 
         ///
